@@ -16,6 +16,7 @@ class ProductController extends Controller
 {
     $categories = Category::get();
     $products = Product::get();
+    //dd($categories);
     return view('pages.products', compact('products', 'categories'));
 }
 

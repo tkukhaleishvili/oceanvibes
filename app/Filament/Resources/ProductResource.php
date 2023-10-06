@@ -40,7 +40,7 @@ class ProductResource extends Resource
                 ->required()
                 ->maxLength(255),
                 TextInput::make('price'),
-                FileUpload::make('image'),
+                FileUpload::make('image'),                    
                 RichEditor::make('description'),
                 Select::make('category_id')
                 ->options([
@@ -51,6 +51,7 @@ class ProductResource extends Resource
                     5 => 'Pre Rolls',
                 ]),
             ]);
+
     }
 
     public static function table(Table $table): Table
@@ -62,7 +63,6 @@ class ProductResource extends Resource
                 TextColumn::make('price'),
                 TextColumn::make('description'),
                 ImageColumn::make('image'),
-                //TextColumn::make('category_id'),
                 TextColumn::make('category_id')
                
             ])
