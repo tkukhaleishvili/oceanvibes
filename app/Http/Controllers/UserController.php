@@ -18,8 +18,11 @@ class UserController extends Controller
                 'name' => 'required|max:255',
                 'phone' => 'required',
                 'email' => 'required|email',
-                'password' => 'required|confirmed',
+                'password' => 'required|min:6|confirmed',
             ]);
+            
+
+            
         $validated['password'] = \Hash::make($validated['password']);
         $user = User::create($validated);
         session()->flash('message', 'Your registration is pending admin approval. Please wait for access.');
@@ -39,8 +42,7 @@ class UserController extends Controller
         if (Auth::attempt(['email' => $validated['email'], 'password' => $validated['password'], 'status' => 1])) {
             return redirect()->route('home'); 
         }
-
-        return back()->withErrors(['email' => 'Invalid Email'])->withInput()->with('message', 'Your registration is pending admin approval. Please wait for access.');
+        return back()->withErrors(['email' => 'Invalid Email'])->withErrors(['password' => 'Invalid Password'])->withInput()->with('message', 'Please write correct Email or Password.');
     }
 
 
@@ -54,6 +56,7 @@ class UserController extends Controller
     $request->session()->regenerateToken();
     return view('user.user_login'); 
     }
+    
 
 }
 

@@ -80,13 +80,13 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="">Email</label>
-                  <input type="text" name="email" class="form-control" placeholder="Your Email">
+                  <input type="text" name="email" class="form-control" placeholder="Your Email" required>
                 </div>
               </div>
                <div class="col-md-6">
                 <div class="form-group">
                   <label for="">Password</label>
-                  <input type="password" name="password" class="form-control" placeholder="Password">
+                  <input type="password" name="password" class="form-control" placeholder="Password"required>
                 </div>
               </div>
               <div class="col-md-6 mt-3">
@@ -98,6 +98,18 @@
                 <div class="form-group">
                   <a href="{{ url('/user_register') }}" class="btn btn-primary py-3 px-5">Create account</a>
                 </div>
+              </div>
+              <div class="col-md-6 mt-3">
+                @if($errors->has('email'))
+                  <div class="alert alert-danger">
+                      {{ $errors->first('email') }}
+                  </div>
+                @endif
+                @if($errors->has('password'))
+                  <div class="alert alert-danger">
+                      {{ $errors->first('password') }}
+                  </div>
+                @endif
               </div>
             </div>
           </form>

@@ -31,7 +31,7 @@
                   <div class="col-xl-6">
                     <div class="menus d-flex ftco-animate">
                       <div class="menu-img">
-                        <img src="{{ asset($product->image) }}">
+                        <img src="{{ asset('storage/'.$product->image) }}">
                       </div>
                       <div class="text d-flex">
                         <div class="one-half">

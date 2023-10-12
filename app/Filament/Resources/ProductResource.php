@@ -40,7 +40,10 @@ class ProductResource extends Resource
                 ->required()
                 ->maxLength(255),
                 TextInput::make('price'),
-                FileUpload::make('image'),                    
+                FileUpload::make('image')
+                    ->required()
+                    ->preserveFilenames()
+                    ->maxSize(20000),            
                 RichEditor::make('description'),
                 Select::make('category_id')
                 ->options([
@@ -49,7 +52,7 @@ class ProductResource extends Resource
                     3 => 'Oil Carts',
                     4 => 'Edibles',
                     5 => 'Pre Rolls',
-                ]),
+                ])->columns(2),
             ]);
 
     }
@@ -62,7 +65,7 @@ class ProductResource extends Resource
                 ->searchable(),
                 TextColumn::make('price'),
                 TextColumn::make('description'),
-                ImageColumn::make('image'),
+                ImageColumn::make('image')->square(),
                 TextColumn::make('category_id')
                
             ])
@@ -92,6 +95,7 @@ class ProductResource extends Resource
             'index' => Pages\ListProducts::route('/'),
             'create' => Pages\CreateProduct::route('/create'),
             'edit' => Pages\EditProduct::route('/{record}/edit'),
+
         ];
     }    
 }
