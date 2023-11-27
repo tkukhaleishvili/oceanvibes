@@ -28,15 +28,14 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">Ocean Vibes</a>
+        <a class="navbar-brand" href="{{ url('/products') }}">Ocean Vibes</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Products
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
-            <li class="nav-item active"><a href="{{ url('/pages/products') }}" class="nav-link">Products</a></li>
-            <li class="nav-item"><a href="{{ url('/pages/contact') }}" class="nav-link">Contact</a></li>
+            <li class="nav-item active"><a href="{{ url('/products') }}" class="nav-link">Products</a></li>
+            <li class="nav-item"><a href="{{ url('/contact') }}" class="nav-link">Contact</a></li>
           </ul>
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
@@ -132,20 +131,6 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
-    var menuText = '';
-
-    if (window.location.pathname === '/pages/products') {
-        menuText = 'Products';
-    } else if (window.location.pathname === '/pages/contact') {
-        menuText = 'Contact';
-    }
-
-    // Select the element and set its text
-    $('.navbar-toggler span').text(menuText);
-});
-</script>
 
 
   <script src="{{asset('assets/js/jquery.min.js')}}"></script>

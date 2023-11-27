@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\image;
 
 
 class ProductController extends Controller
@@ -16,8 +17,9 @@ class ProductController extends Controller
 {
     $categories = Category::get();
     $products = Product::get();
+    $images = Image::get();
     //dd($categories);
-    return view('pages.products', compact('products', 'categories'));
+    return view('pages.products', compact('products', 'categories','images'));
 }
 
 

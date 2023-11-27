@@ -3,7 +3,9 @@
 @section('page_top')
 
   <h1 class="mb-3">Contact Us</h1>
+  <br>
 @endsection
+
 @section('content')
 
     <section class="ftco-section contact-section">
@@ -34,75 +36,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <form action="#">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
-          </div>
         </div>
-        <div class="row mt-5">
-          <div class="col-md-12" id="map"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="instagram">
-      <div class="container-fluid">
-        <div class="row no-gutters justify-content-center pb-5">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2><span>Gallery</span></h2>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="{{ url('images/insta-1.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-1.jpg') }}');">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="{{ url('images/insta-2.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-2.jpg') }}');">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="{{ url('images/insta-3.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-3.jpg') }}');">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="{{ url('images/insta-4.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-4.jpg') }}');">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="{{ url('images/insta-5.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-5.jpg') }}');">  
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
         </div>
       </div>
     </section>

@@ -5,6 +5,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ImageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,16 +35,15 @@ Route::middleware(['guest'])->group(function () {
 
 
 Route::middleware(['auth'])->group(function () {
-Route::resource('pages/products',ProductController::class);
+Route::resource('/products',ProductController::class);
+Route::resource('/images',ImageController::class);
 
 Route::get('/', function () {
-    return view('pages.welcome');
+    return redirect()->back();
 })->name('home');
 
-Route::get('pages/contact', function () {
-    //dd(auth()->user());
+Route::get('/contact', function () {
     $categories = Category ::get();
-    //dd($categories);
     $products = Product ::get();
     return view('pages.contact', compact('products','categories'));
 });

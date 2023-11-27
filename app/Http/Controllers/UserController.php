@@ -34,14 +34,16 @@ class UserController extends Controller
 
     public function loginUser(Request $request)
     {
-        // dd($request->all());
+         // /dd($request->all());
         $validated = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
-        if (Auth::attempt(['email' => $validated['email'], 'password' => $validated['password'], 'status' => 1])) {
-            return redirect()->route('home'); 
+        if (Auth::attempt(['email' => $validated['email'], 'password' => $validated['password'], 'status_id' => 1])) {
+            //dd('ddd');
+            return redirect()->route('products.index'); 
         }
+    //dd('aaa');
         return back()->withErrors(['email' => 'Invalid Email'])->withErrors(['password' => 'Invalid Password'])->withInput()->with('message', 'Please write correct Email or Password.');
     }
 
@@ -49,6 +51,7 @@ class UserController extends Controller
     public function loginFrom(){
         return view('user.user_login');
     }
+    
     public function logout(Request $request)
     {
     Auth::logout();

@@ -81,13 +81,13 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="">Email</label>
-                    <input type="text" name="email" class="form-control" placeholder="Your Email" required>
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="">Phone</label>
-                    <input type="text" name="phone" class="form-control" placeholder="Phone" required>
+                    <input type="tel" name="phone" class="form-control" placeholder="Phone" required>
                   </div>
                 </div>
                  <div class="col-md-6">

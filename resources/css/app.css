@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.menu .tab-content .menu-item .menu-img {
+    padding: 0 0px; 
+    margin-bottom: auto;
+    border-radius: 25px;
+  }
+  .one-forth {
+    /* Ensure that the price container doesn't exceed a certain width */
+    max-width: 80px; /* You can adjust the value as needed */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .price {
+    /* Allow text to break and wrap within the price container */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  

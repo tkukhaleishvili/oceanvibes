@@ -2,24 +2,27 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
-use App\Models\User;
+use App\Filament\Resources\ImageResource\Pages;
+use App\Filament\Resources\ImageResource\RelationManagers;
+use App\Models\Image;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Forms\Components\Toggle;
-use Filament\Tables\Columns\ToggleColumn;
+use Filament\Forms\Components\Section;
+use Filament\Tables\Columns\SelectColumn;
+use Filament\Forms\Components\Select;
 
-class UserResource extends Resource
+class ImageResource extends Resource
 {
-    protected static ?string $model = User::class;
+    protected static ?string $model = Image::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -27,29 +30,25 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')
+                FileUpload::make('image')
                     ->required()
-                    ->maxLength(255),
-                TextInput::make('email'),
-                TextInput::make('phone'),
-                Toggle::make('status_id'),
-                TextInput::make('password')
-                    ->password()
-                    ->required()
-                    ->hiddenOn(Pages\EditUser::class)
-                
+                    ->preserveFilenames()
+                    ->maxSize(20000),
+
+                Select::make('status_id')
+                ->options([
+                    1 => 'active',
+                    2 => 'not active',
+                ]),
             ]);
+           
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name'),
-                TextColumn::make('email'),
-                TextColumn::make('phone'),
-                ToggleColumn::make('status_id'),
-                TextColumn::make('phone'),
+                ImageColumn::make('image')->square(),
             ])
             ->filters([
                 //
@@ -74,9 +73,9 @@ class UserResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListUsers::route('/'),
-            'create' => Pages\CreateUser::route('/create'),
-            'edit' => Pages\EditUser::route('/{record}/edit'),
+            'index' => Pages\ListImages::route('/'),
+            'create' => Pages\CreateImage::route('/create'),
+            'edit' => Pages\EditImage::route('/{record}/edit'),
         ];
     }    
 }

@@ -40,6 +40,9 @@ class ProductResource extends Resource
                 ->required()
                 ->maxLength(255),
                 TextInput::make('price'),
+                TextInput::make('price1'),
+                TextInput::make('price2'),
+                TextInput::make('price3'),
                 FileUpload::make('image')
                     ->required()
                     ->preserveFilenames()
@@ -52,6 +55,7 @@ class ProductResource extends Resource
                     3 => 'Oil Carts',
                     4 => 'Edibles',
                     5 => 'Pre Rolls',
+                    6 => 'New Products',
                 ])->columns(2),
             ]);
 
@@ -64,6 +68,9 @@ class ProductResource extends Resource
                 TextColumn::make('name')
                 ->searchable(),
                 TextColumn::make('price'),
+                TextColumn::make('price1'),
+                TextColumn::make('price2'),
+                TextColumn::make('price3'),
                 TextColumn::make('description'),
                 ImageColumn::make('image')->square(),
                 TextColumn::make('category_id')

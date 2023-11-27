@@ -86,7 +86,7 @@
                <div class="col-md-6">
                 <div class="form-group">
                   <label for="">Password</label>
-                  <input type="password" name="password" class="form-control" placeholder="Password"required>
+                  <input type="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
               </div>
               <div class="col-md-6 mt-3">

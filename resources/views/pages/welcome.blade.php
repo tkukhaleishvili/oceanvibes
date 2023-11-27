@@ -2,13 +2,14 @@
 
 @section('page_top')
 
-
-  <h1 class="mb-3">Home</h1>
+  <h1 class="mb-3">Welcome </h1>
+  <br>
 @endsection
 @section('content')
 
 
-    <section class="instagram">
+
+{{--     <section class="instagram">
       <div class="container-fluid">
         <div class="row no-gutters justify-content-center pb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
@@ -17,35 +18,35 @@
         </div>
         <div class="row no-gutters">
           <div class="col-sm-12 col-md ftco-animate">
-              <a href="{{ url('images/insta-1.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-1.jpg') }}');">
+            <a href="{{ url('images/insta-1.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-1.jpg') }}');">
               <div class="icon d-flex justify-content-center">
                 <span class="icon-instagram align-self-center"></span>
               </div>
             </a>
           </div>
           <div class="col-sm-12 col-md ftco-animate">
-            <a href="{{ url('images/insta-1.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-2.jpg') }}');">  
+            <a href="{{ url('images/insta-2.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-2.jpg') }}');">
               <div class="icon d-flex justify-content-center">
                 <span class="icon-instagram align-self-center"></span>
               </div>
             </a>
           </div>
           <div class="col-sm-12 col-md ftco-animate">
-            <a href="{{ url('images/insta-1.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-3.jpg') }}');">  
+            <a href="{{ url('images/insta-3.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-3.jpg') }}');">
               <div class="icon d-flex justify-content-center">
                 <span class="icon-instagram align-self-center"></span>
               </div>
             </a>
           </div>
           <div class="col-sm-12 col-md ftco-animate">
-            <a href="{{ url('images/insta-1.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-4.jpg') }}');">  
+            <a href="{{ url('images/insta-4.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-4.jpg') }}');">
               <div class="icon d-flex justify-content-center">
                 <span class="icon-instagram align-self-center"></span>
               </div>
             </a>
           </div>
           <div class="col-sm-12 col-md ftco-animate">
-            <a href="{{ url('images/insta-1.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-5.jpg') }}');">  
+            <a href="{{ url('images/insta-5.jpg') }}" class="insta-img image-popup" style="background-image: url('{{ asset('assets/images/insta-5.jpg') }}');">  
               <div class="icon d-flex justify-content-center">
                 <span class="icon-instagram align-self-center"></span>
               </div>
@@ -54,6 +55,7 @@
         </div>
       </div>
     </section>
-
+    <br> --}}
 @endsection
 
+    
